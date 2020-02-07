@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Función Básica 2</title>
+		<script type="text/javascript">
+		//Ejercicios
+		
+			//Sigma - Implementa una función sigma(num) que, dado un número, devuelve la suma de todos los enteros positivos (incluyendo el número dado). Ej: sigma(3) = 6 (1+2+3); sigma(5) = 15 (1+2+3+4+5).
+			//Resultado Ejercicio 1
+				var sum=0
+			function sigma(n){
+				for (var i = 1; i <=n; i++) {
+					console.log (i);
+					sum=sum+i;
+				}
+				return sum;
+			}
+			console.log (sigma(5))
+          
+
+			//Factorial - Escribe una función factorial(num) que, dado un número, devuelva el producto (multiplicación) de todos los enteros positivos (incluyendo el número dado). Por ejemplo: factorial(3) = 6 (1*2*3); factorial(5) = 120 (1*2*3*4*5).
+			//Resultado Ejercicio 2
+				var mul=1	
+			function factorial(n){
+			 	for (var i = 1; i <=n; i++) {
+			 		console.log (i);
+			 		mul=mul*i;
+			 	}
+			 	return mul;
+			 }
+			 console.log (factorial(5))
+
+			//Fibonacci - Crea una función para generar números de Fibonacci. En esta famosa secuencia matemática, cada número es la suma de las dos anteriores, partiendo con los valores 0 y 1. Tu función debería aceptar un argumento, un índice en la secuencia (donde 0 corresponde al valor inicial, 4 corresponden al valor cuatro más tarde, etc). Ejemplos: fibonacci(0) = 0 (dado), fibonacci(1) = 1 (dado), fibonacci(2) = 1 (fib(0)+fib(1), o 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, o 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8). Haz esto primero sin usar recursión. Si no sabes qué es una recursión, no te preocupes puesto que vamos a introducir este concepto en la Parte 2 de esta actividad. 
+			//Resultado Ejercicio 3
+
+			function fibonacci(x){
+			  var a=0;
+			  var b=1;
+			  if(x==0){
+			    return a;
+			  }
+			  if(x==1){
+			    return b;
+			  }
+			  for(i=1;i<=x-1;i++){
+			    fib=a+b;
+			    a=b;
+			    b=fib;
+			  }
+			  return(fib);
+			}
+			num=6;
+			console.log(fibonacci(num));
+
+
+		
+			//Array: Penúltimo: Devuelve el penúltimo elemento del array. Dado [42,true,4,”Liam”, 7] devuelve “Liam”. Si el array es muy pequeño, devuelve null.   
+			//Resultado Ejercicio 4
+		
+
+			function penultimo(x){
+				for (var i = 0; i < x.length; i++) {
+					if (x.length <2){
+                      return null;
+                  }                  
+                 else {
+                   return x[x.length-2];
+                 }
+				}
+			}
+
+			a=[[42,true,4,"Liam", 7]]; 
+			console.log (penultimo(a));
+
+			//Array: “N” último: Devuelve el elemento “N” último. Dado ([5,2,3,6,4,9,7],3], devuelve 4. Si el array es muy pequeño, devuelve null. 
+			//Resultado Ejercicio 5
+
+			function antepenultimo(x,n){
+				for (var i = 0; i < x.length; i++) {
+					if (x.length <n){
+                      return null;
+                  }                  
+                 else {
+                   return (x[x.length-(n)]);
+                 }
+				}
+			}
+			console.log (antepenultimo([5,2,3,6,4,9,7],3));
+            
+			//Array: Segundo más grande: Devuelve el segundo elemento más grande de un array. Dado [42,1,4,3.14,7], devuelve 7.  Si el array es muy pequeño, devuelve null.
+			//Resultado Ejercicio 6
+			function a (array){
+				var max1=array[0];
+				var max2=array[0];
+				
+				for (var i=0; i<array.length; i++){
+					if(array[i]>max1){
+						max1=array[i];
+					}
+					if(array[i]<max2){
+						max2=array[i];
+					}
+				}
+				
+				return 
+		}
+		array=a([42,1,4,3.14,7]);
+		console.log(array);
+
+
+
+			//Doble Problema: Crea una función que cambie un array dado duplicando cada uno de sus elementos y manteniendo el orden original. Convierte [4, "Ulysses", 42, false] a [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
+			//Resultado Ejercicio 7
+
+			var y=[];
+			function repetirValores(x){
+			for(var i=0; i<x.length;i++)
+			{
+			y.push(x[i]);
+			y.push(x[i]);
+			}
+			return y;
+			}
+			z=repetirValores([4,"Ulysses", 42, false]);
+			console.log(y);
